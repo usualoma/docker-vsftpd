@@ -16,7 +16,7 @@ sudo docker run -it --rm \
     -d mt-ftpd.qa.sixapart.info \
     --agree-tos
 sudo mkdir -p /etc/vsftpd/private
-sudo cat /etc/letsencrypt/live/mt-ftpd.qa.sixapart.info/privkey.pem /etc/letsencrypt/live/mt-ftpd.qa.sixapart.info/cert.pem | sudo tee /etc/vsftpd/private/vsftpd.pem
+sudo cat /etc/letsencrypt/live/mt-ftpd.qa.sixapart.info/privkey.pem /etc/letsencrypt/live/mt-ftpd.qa.sixapart.info/fullchain.pem | sudo tee /etc/vsftpd/private/vsftpd.pem
 git clone git@github.com:usualoma/docker-vsftpd.git
 cd docker-vsftpd
 git checkout docker-compose
