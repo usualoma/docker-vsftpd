@@ -5,6 +5,8 @@ services:
       context: .
     volumes:
       - /etc/vsftpd/private:/etc/vsftpd/private
+    environment:
+      PASV_ADDRESS: $PASV_ADDRESS
     ports:
       - 21100-21109:21100-21109
     command:
