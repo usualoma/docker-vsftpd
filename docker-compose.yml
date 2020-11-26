@@ -1,6 +1,7 @@
 version: "3"
 services:
   ftp: &vsftpd
+    restart: always
     build:
       context: .
     volumes:
