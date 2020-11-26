@@ -1,0 +1,29 @@
+version: "3"
+services:
+  ftp: &vsftpd
+    build:
+      context: .
+    volumes:
+      - /etc/vsftpd/private:/etc/vsftpd/private
+    ports:
+      - 21100-21109:21100-21109
+    command:
+      - ftp
+  ftps:
+    <<: *vsftpd
+    ports:
+      - 21110-21119:21110-21119
+    command:
+      - ftps
+  ftps_implicit:
+    <<: *vsftpd
+    ports:
+      - 21120-21129:21120-21129
+    command:
+      - ftps_implicit
+  ftps_tls:
+    <<: *vsftpd
+    ports:
+      - 21130-21139:21130-21139
+    command:
+      - ftps_tls
